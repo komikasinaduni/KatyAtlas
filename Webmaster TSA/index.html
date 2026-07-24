@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katy, TX | Community Resource Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260724-1" />
+  <script>
+    window.KATYHUB_SUBMIT_EMAIL = 'katyhub8@gmail.com';
+  </script>
+  <script defer src="calendar-sync.js?v=20260724-1"></script>
+  <script defer src="event-sync.js?v=20260724-1"></script>
+  <script defer src="script.js?v=20260724-1"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="logo">KatyHub</a>
+    </div>
+    <div class="nav-center">
+      <div class="search-shell">
+        <input type="text" id="globalSearch" placeholder="Search resources, services, events…" />
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="directory.html">Resources</a>
+      <a href="#submit">Submit</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#history">About</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Local support, made easier</p>
+        <h1>Find trusted help in Katy.</h1>
+        <p>Explore food, housing, education, healthcare, and volunteer opportunities in one welcoming hub.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="directory.html">Browse resources</a>
+          <a class="button button-secondary" href="#calendar">See upcoming events</a>
+        </div>
+      </div>
+      <div class="hero-preview" aria-hidden="true">
+        <div class="browser-window">
+          <div class="browser-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="browser-body">
+            <div class="browser-pill">Search resources</div>
+            <div class="browser-row"><strong>Housing</strong><span>Support for families</span></div>
+            <div class="browser-row"><strong>Food</strong><span>Pantries and meal support</span></div>
+            <div class="browser-row"><strong>Volunteer</strong><span>Give back this month</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats-section">
+    <div class="stat-card">
+      <strong data-target="20" data-suffix="+">0</strong>
+      <span>Verified organizations</span>
+    </div>
+    <div class="stat-card">
+      <strong data-target="8" data-suffix="">0</strong>
+      <span>Topic categories</span>
+    </div>
+    <div class="stat-card">
+      <strong data-target="12" data-suffix="+">0</strong>
+      <span>Upcoming events</span>
+    </div>
+    <div class="stat-card">
+      <strong data-target="100" data-suffix="%">0</strong>
+      <span>Free resource access</span>
+    </div>
+  </section>
+
+  <section id="helpWizard" class="section">
+    <div class="section-heading">
+      <h2>Need help today?</h2>
+      <p>Pick a need and we’ll surface relevant organizations fast.</p>
+    </div>
+    <div id="helpWizardButtons" class="help-grid"></div>
+    <div id="quickHelpResults" class="spotlight-grid"></div>
+  </section>
+
+  <section id="spotlight" class="section">
+    <div class="section-heading">
+      <h2>Featured nonprofits</h2>
+      <a class="text-link" href="directory.html">View full directory</a>
+    </div>
+    <div id="spotlightGrid" class="spotlight-grid"></div>
+  </section>
+
+  <section id="directory" class="section muted">
+    <div class="section-heading">
+      <h2>Newest organizations</h2>
+      <a class="text-link" href="directory.html">Browse all</a>
+    </div>
+    <div id="directoryGrid" class="spotlight-grid"></div>
+  </section>
+
+  <section id="calendar" class="section">
+    <div class="section-heading">
+      <h2>Community calendar</h2>
+      <p>Keep track of volunteering, drives, and local gatherings.</p>
+    </div>
+    <div class="calendar-layout">
+      <div class="calendar-panel">
+        <div id="calendarExport"></div>
+        <div class="filter-chips" id="calendarFilters"></div>
+        <div id="calendarGrid"></div>
+      </div>
+      <div class="calendar-sidebar">
+        <div id="syncStatus" class="sync-status"></div>
+        <div id="upcomingEvents" class="upcoming-events"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="submit" class="section muted">
+    <div class="section-heading">
+      <h2>Submit a community resource</h2>
+      <p>Share a new nonprofit or local service with the Katy community.</p>
+    </div>
+    <form id="resourceForm">
+      <input name="name" type="text" placeholder="Organization name" required />
+      <input name="email" type="email" placeholder="Contact email" required />
+      <input name="tags" type="text" placeholder="Tags (comma separated) e.g. volunteer, nonprofit" required />
+      <textarea name="description" placeholder="Brief description" required></textarea>
+      <button class="button button-primary" type="submit">Submit resource</button>
+    </form>
+    <p id="formMessage" class="form-message"></p>
+  </section>
+
+  <section id="history" class="section">
+    <div class="section-heading">
+      <h2>How community shapes Katy</h2>
+      <p>Katy’s growth has always depended on neighbors stepping up for one another.</p>
+    </div>
+    <div class="story-card">
+      <blockquote>“Strong communities don’t happen by accident. They’re built.”</blockquote>
+      <p>From grassroots organizers to long-standing nonprofits, these groups continue to shape the identity of the city and welcome newcomers into a culture of service.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Katy Community Resource Hub</p>
+  </footer>
+</body>
+</html>

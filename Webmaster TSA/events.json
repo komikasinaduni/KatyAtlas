@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-07-24T06:00:00Z",
+  "nonprofits": [
+    {
+      "id": "katy-responds",
+      "name": "Katy Responds",
+      "syncType": "manual",
+      "calendarSource": "https://www.katyresponds.org/items",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T06:00:00Z"
+    },
+    {
+      "id": "clothed-by-faith",
+      "name": "Clothed by Faith Katy",
+      "syncType": "manual",
+      "calendarSource": "https://www.clothedbyfaith.org/events",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T05:45:00Z"
+    },
+    {
+      "id": "creator-terminal",
+      "name": "Creator Terminal",
+      "syncType": "manual",
+      "calendarSource": "https://www.creatorterminal.com/blog",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-21T12:15:00Z"
+    },
+    {
+      "id": "compassion-katy",
+      "name": "Compassion Katy",
+      "syncType": "manual",
+      "calendarSource": "https://www.compassionkaty.org/volunteer",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T05:15:00Z"
+    },
+    {
+      "id": "ballard-house",
+      "name": "The Ballard House",
+      "syncType": "manual",
+      "calendarSource": "https://www.theballardhouse.org/events",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T05:10:00Z"
+    },
+    {
+      "id": "family-hope",
+      "name": "Family Hope",
+      "syncType": "manual",
+      "calendarSource": "https://www.familyhopefulshear.org/",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T04:55:00Z"
+    },
+    {
+      "id": "katy-cares",
+      "name": "Katy Cares",
+      "syncType": "manual",
+      "calendarSource": "https://www.katycares.org/category/events",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T05:20:00Z"
+    },
+    {
+      "id": "arc-of-katy",
+      "name": "Arc of Katy",
+      "syncType": "manual",
+      "calendarSource": "https://www.thearcofkaty.org/news",
+      "status": "needs-review",
+      "lastUpdated": "2026-07-24T04:50:00Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-kr-1",
+      "title": "Volunteer Build Day",
+      "date": "2026-07-25",
+      "tags": ["volunteer", "community"],
+      "resourceId": "katy-responds",
+      "description": "Help rebuild homes. Tools provided, no experience necessary.",
+      "time": "8:00 AM - 12:00 PM",
+      "location": "Katy, TX",
+      "sourceType": "google",
+      "lastUpdated": "2026-07-24T06:00:00Z"
+    },
+    {
+      "id": "evt-kr-2",
+      "title": "Donation Drive for Disaster Relief",
+      "date": "2026-08-10",
+      "tags": ["community", "basic-needs"],
+      "resourceId": "katy-responds",
+      "description": "Drop off household items, furniture, and supplies",
+      "time": "10:00 AM - 4:00 PM",
+      "location": "Katy Community Center",
+      "sourceType": "google",
+      "lastUpdated": "2026-07-24T06:00:00Z"
+    },
+    {
+      "id": "evt-cbf-1",
+      "title": "Community Clothing Drive",
+      "date": "2026-07-21",
+      "tags": ["basic-needs", "community"],
+      "resourceId": "clothed-by-faith",
+      "description": "Donate gently used clothing for families in need",
+      "time": "9:00 AM - 2:00 PM",
+      "location": "Clothed by Faith Center",
+      "sourceType": "ics",
+      "lastUpdated": "2026-07-24T05:45:00Z"
+    },
+    {
+      "id": "evt-ct-1",
+      "title": "Youth Tech Workshop",
+      "date": "2026-07-23",
+      "tags": ["education", "youth"],
+      "resourceId": "creator-terminal",
+      "description": "Learn web design and coding basics. Ages 13-18. Free.",
+      "time": "3:00 PM - 5:00 PM",
+      "location": "Creator Terminal Studio",
+      "sourceType": "manual",
+      "lastUpdated": "2026-07-21T12:15:00Z"
+    },
+    {
+      "id": "evt-ck-1",
+      "title": "School Supplies Distribution",
+      "date": "2026-07-28",
+      "tags": ["youth", "basic-needs"],
+      "resourceId": "compassion-katy",
+      "description": "Free school supplies for Katy ISD students",
+      "time": "12:00 PM - 4:00 PM",
+      "location": "Compassion Katy Center",
+      "sourceType": "eventbrite",
+      "lastUpdated": "2026-07-24T05:15:00Z"
+    }
+  ]
+}
