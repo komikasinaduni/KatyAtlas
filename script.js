@@ -407,7 +407,7 @@ function renderSyncStatus() {
     label.textContent = nonprofit.name;
     const badge = document.createElement('span');
     badge.className = `sync-badge sync-badge--${nonprofit.status || 'manual'}`;
-    badge.textContent = nonprofit.status === 'synced' ? 'Synced' : (nonprofit.status === 'needs-review' ? 'Needs review' : 'Manual');
+    badge.textContent = nonprofit.status === 'synced' ? 'Synced' : 'Manual';
     const source = document.createElement('p');
     source.textContent = `Source: ${nonprofit.syncType || 'manual'} • ${nonprofit.calendarSource || 'submitted manually'}`;
     const updated = document.createElement('small');
@@ -754,7 +754,11 @@ function renderCalendar() {
 
   function renderUpcomingEvents(activeTags = []) {
     if (!upcoming) return;
-    const filtered = getFilteredEvents(activeTags).slice(0, 4);
+    const today = new Date().toISOString().slice(0, 10);
+    const filtered = getFilteredEvents(activeTags)
+      .filter(event => event.date >= today)
+      .sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title))
+      .slice(0, 4);
     upcoming.innerHTML = '';
     const heading = document.createElement('div');
     heading.className = 'upcoming-card';

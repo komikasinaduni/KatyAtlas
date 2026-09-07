@@ -16,166 +16,59 @@
  * - Katy Heritage Society: katyheritagesociety.org/events
  */
 
-// Real events curated from nonprofit websites
-const realEvents = [
-  // Katy Responds - www.katyresponds.org
-  { 
-    id: 'kr-1', 
-    title: 'Volunteer Build Day', 
-    date: '2026-07-25', 
-    tags: ['volunteer', 'community'], 
-    resourceId: 'katy-responds',
-    description: 'Help rebuild homes. Tools provided, no experience necessary.',
-    time: '8:00 AM - 12:00 PM',
-    location: 'Katy, TX'
-  },
-  { 
-    id: 'kr-2', 
-    title: 'Donation Drive for Disaster Relief', 
-    date: '2026-08-10', 
-    tags: ['community', 'basic-needs'], 
-    resourceId: 'katy-responds',
-    description: 'Drop off household items, furniture, and supplies',
-    time: '10:00 AM - 4:00 PM',
-    location: 'Katy Community Center'
-  },
+// Events are generated only from schedules explicitly published by each source.
+const realEvents = [];
+const sourceStart = new Date(2026, 8, 7);
+const sourceEnd = new Date(2026, 11, 31);
 
-  // Clothed by Faith - www.clothedbyfaith.org
-  { 
-    id: 'cbf-1', 
-    title: 'Community Clothing Drive', 
-    date: '2026-07-21', 
-    tags: ['basic-needs', 'community'], 
-    resourceId: 'clothed-by-faith',
-    description: 'Donate gently used clothing for families in need',
-    time: '9:00 AM - 2:00 PM',
-    location: 'Clothed by Faith Center'
-  },
-  { 
-    id: 'cbf-2', 
-    title: 'Volunteer Sorting & Organization', 
-    date: '2026-08-02', 
-    tags: ['volunteer', 'community'], 
-    resourceId: 'clothed-by-faith',
-    description: 'Help sort, organize, and prepare clothing for distribution',
-    time: '10:00 AM - 1:00 PM',
-    location: 'Clothed by Faith Warehouse'
-  },
+function dateKey(date) {
+  return date.toISOString().slice(0, 10);
+}
 
-  // Creator Terminal - www.creatorterminal.com
-  { 
-    id: 'ct-1', 
-    title: 'Youth Tech Workshop', 
-    date: '2026-07-23', 
-    tags: ['education', 'youth'], 
-    resourceId: 'creator-terminal',
-    description: 'Learn web design and coding basics. Ages 13-18. Free.',
-    time: '3:00 PM - 5:00 PM',
-    location: 'Creator Terminal Studio'
-  },
-  { 
-    id: 'ct-2', 
-    title: 'Back-to-School STEM Camp', 
-    date: '2026-08-05', 
-    tags: ['education', 'youth'], 
-    resourceId: 'creator-terminal',
-    description: '3-day intensive robotics and coding camp for middle schoolers',
-    time: '9:00 AM - 3:00 PM',
-    location: 'Creator Terminal Studio'
-  },
+for (let date = new Date(sourceStart); date <= sourceEnd; date.setDate(date.getDate() + 1)) {
+  const day = date.getDay();
+  const dateString = dateKey(date);
 
-  // Compassion Katy - www.compassionkaty.org
-  { 
-    id: 'ck-1', 
-    title: 'School Supplies Distribution', 
-    date: '2026-07-28', 
-    tags: ['youth', 'basic-needs'], 
-    resourceId: 'compassion-katy',
-    description: 'Free school supplies for Katy ISD students',
-    time: '12:00 PM - 4:00 PM',
-    location: 'Compassion Katy Center'
-  },
-  { 
-    id: 'ck-2', 
-    title: 'Community Service Day', 
-    date: '2026-08-15', 
-    tags: ['volunteer', 'faith-based'], 
-    resourceId: 'compassion-katy',
-    description: 'Partner organizations meet for coordinated service projects',
-    time: '8:00 AM - 12:00 PM',
-    location: 'Various Katy Locations'
-  },
-
-  // Jackie Lou Foundation - www.jackieloufoundation.org
-  { 
-    id: 'jlf-1', 
-    title: 'Intergenerational Afternoon', 
-    date: '2026-08-08', 
-    tags: ['community', 'youth'], 
-    resourceId: 'jackie-lou-foundation',
-    description: 'Seniors and children connect through games, stories, and snacks',
-    time: '2:00 PM - 4:00 PM',
-    location: 'Jackie Lou Foundation Center'
-  },
-
-  // Houston Friendship & Wellness - www.friendshipwellness.com
-  { 
-    id: 'hfw-1', 
-    title: 'Health & Wellness Seminar', 
-    date: '2026-07-20', 
-    tags: ['health', 'community'], 
-    resourceId: 'friendship-circle',
-    description: 'Free health screening and wellness education for all ages',
-    time: '10:00 AM - 2:00 PM',
-    location: 'Houston Wellness Center'
-  },
-  { 
-    id: 'hfw-2', 
-    title: 'Community Fitness Class', 
-    date: '2026-08-01', 
-    tags: ['health', 'community'], 
-    resourceId: 'friendship-circle',
-    description: 'Free outdoor yoga and wellness activities. Open to all.',
-    time: '6:00 PM - 7:00 PM',
-    location: 'Katy Park'
-  },
-
-  // Arc of Katy - www.thearcofkaty.org
-  { 
-    id: 'ak-1', 
-    title: 'Inclusive Recreation Day', 
-    date: '2026-08-09', 
-    tags: ['community', 'youth'], 
-    resourceId: 'arc-of-katy',
-    description: 'Games, activities, and social time for all abilities',
-    time: '1:00 PM - 4:00 PM',
-    location: 'Katy Recreation Center'
-  },
-
-  // Katy Heritage Society - www.katyheritagesociety.org
-  { 
-    id: 'khs-1', 
-    title: 'Local History Walking Tour', 
-    date: '2026-07-29', 
-    tags: ['education', 'community'], 
-    resourceId: 'katy-heritage',
-    description: 'Learn about Katy\'s rich history on a guided community tour',
-    time: '9:00 AM - 11:00 AM',
-    location: 'Downtown Katy'
-  },
-
-  // Katy Cares - www.katycares.org
-  { 
-    id: 'kc-1', 
-    title: 'Caregiver Support Group Meeting', 
-    date: '2026-07-24', 
-    tags: ['health', 'community'], 
-    resourceId: 'katy-cares',
-    description: 'Monthly meeting for family caregivers. Free. No registration needed.',
-    time: '6:30 PM - 8:00 PM',
-    location: 'Katy Community Center'
+  if ([2, 4, 6].includes(day)) {
+    realEvents.push({
+      id: `kr-${dateString}`,
+      title: 'Katy Responds volunteer workday',
+      date: dateString,
+      tags: ['volunteer', 'community'],
+      resourceId: 'katy-responds',
+      description: 'Home renovation volunteer workday. Exact task and location are sent after registration, typically 48 hours before service.',
+      time: '9:00 AM - 12:00 PM',
+      location: 'Katy Responds project site',
+      sourceUrl: 'https://www.katyresponds.org/volunteer'
+    });
   }
-];
+
+  if (day >= 1 && day <= 5) {
+    realEvents.push({
+      id: `cbf-${dateString}`,
+      title: 'Clothed by Faith volunteer shifts',
+      date: dateString,
+      tags: ['volunteer', 'basic-needs'],
+      resourceId: 'clothed-by-faith',
+      description: 'Multiple two-hour shifts are listed for Personal Shopper, Sorting Donations and Restocking, and Warehouse Assistant roles. Signup and requirements apply.',
+      time: '10:00 AM - 4:00 PM',
+      location: '802 Dominion Dr, Suite 200, Katy, TX 77450',
+      sourceUrl: 'https://volunteer.bloomerang.co/volunteer/#/join-party?k=et6ssxljisaou7&e=29531&fromEvent'
+    });
+  }
+
+  realEvents.push({
+    id: `bh-${dateString}`,
+    title: 'The Ballard House walk-in',
+    date: dateString,
+    tags: ['housing', 'health', 'community'],
+    resourceId: 'ballard-house',
+    description: 'Walk-in availability as provided for The Ballard House.',
+    time: '3:00 PM - 5:00 PM',
+    location: 'The Ballard House',
+    sourceUrl: 'https://www.theballardhouse.org/events'
+  });
+}
 
 /**
  * Fetch and merge real nonprofit events with existing events array

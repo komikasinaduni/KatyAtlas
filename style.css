@@ -291,6 +291,7 @@ img { max-width: 100%; display: block; }
 .sync-status-card, .upcoming-card { background: white; border-radius: 18px; padding: 1rem; box-shadow: var(--shadow); }
 .sync-status-card strong { display: block; margin-bottom: 0.4rem; }
 .sync-status-card p, .sync-status-card small { margin: 0.25rem 0; color: var(--text-soft); }
+.calendar-note { margin: 0; padding: 1rem; color: var(--text-soft); font-size: 0.9rem; line-height: 1.55; background: #f8fafc; border-left: 3px solid var(--accent); }
 .sync-badge { display: inline-flex; align-items: center; padding: 0.25rem 0.65rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 0.35rem; }
 .sync-badge--synced { background: #dcfce7; color: #166534; }
 .sync-badge--needs-review { background: #fef3c7; color: #92400e; }
